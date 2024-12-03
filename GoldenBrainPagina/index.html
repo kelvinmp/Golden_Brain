@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Brain IMC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="Images/goldenbrain_logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <br>
+    <div class="container">
+      <h1 class="barra barra-azul negro">Golden Brain IMC</h1>
+      <p class="barra barra-azul">Conciencia sobre el sobrepeso y la desnutrición</p>
+    </div>
+  </header>
+  <main>
+    <section class="calculator">
+      <div class="form-container">
+        <div class="input-group">
+          <label for="weight">Peso (kg):</label>
+          <input type="number" id="weight" placeholder="Ingresa tu peso">
+        </div>
+        <div class="input-group">
+          <label for="height">Altura (m):</label>
+          <input type="number" id="height" placeholder="Ingresa tu altura">
+        </div>
+        <div class="input-group">
+          <label for="age">Edad (años):</label>
+          <input type="number" id="age" placeholder="Ingresa tu edad">
+        </div>
+
+        <div class="gender-group">
+          <label>Género:</label>
+          <label for="male" class="gender-label">
+            <input type="radio" id="male" name="gender" value="Masculino">
+            <span class="gender-button">Masculino</span>
+          </label>
+          <label for="female" class="gender-label">
+            <input type="radio" id="female" name="gender" value="Femenino">
+            <span class="gender-button">Femenino</span>
+          </label>
+        </div>
+
+        <!-- Encuesta de padecimientos -->
+        <div class="input-group">
+          <label for="conditions">¿Padeces alguna de estas condiciones?</label>
+          <select id="conditions" multiple>
+            <option value="hipertension">Hipertensión</option>
+            <option value="problemas_cervicales">Problemas cervicales</option>
+            <option value="problemas_corazon">Problemas del corazón</option>
+            <option value="diabetes">Diabetes</option>
+            <option value="ninguno">Ninguno</option>
+          </select>
+        </div>
+
+        <button id="calculate-btn" class="calculate-btn">Calcular IMC</button>
+      </div>
+      <div class="result-container">
+        <h2>Tu IMC:</h2>
+        <p id="imc-result">--</p>
+        <p id="imc-status">Por favor, ingresa tu peso, altura y género.</p>
+        <h3>Recomendaciones:</h3>
+        <p id="health-recommendations">--</p>
+        <div class="average-container">
+          <h3>Promedio de IMC Normal:</h3>
+          <p id="average-imc">Selecciona tu género para ver el promedio.</p>
+        </div>
+        <div class="imc-bar">
+          <div class="bar desnutricion"></div>
+          <div class="bar bajo"></div>
+          <div class="bar normal"></div>
+          <div class="bar sobrepeso"></div>
+          <div class="bar obesidad"></div>
+          <div class="bar obesidad-extrema"></div>
+        </div>
+      </div>
+      <a href="home.html" class="home-btn">Ir a Inicio</a>
+    </section>
+  </main>
+  <script>
+    document.getElementById('calculate-btn').addEventListener('click', () => {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const height = parseFloat(document.getElementById('height').value);
+      const age = parseInt(document.getElementById('age').value);
+      const gender = document.querySelector('input[name="gender"]:checked')?.value;
+      const conditions = Array.from(document.getElementById('conditions').selectedOptions).map(opt => opt.value);
+
+      const resultElement = document.getElementById('imc-result');
+      const statusElement = document.getElementById('imc-status');
+      const recommendationsElement = document.getElementById('health-recommendations');
+      const averageIMCElement = document.getElementById('average-imc');
+
+      if (!weight || !height || !age || !gender || weight <= 0 || height <= 0 || age <= 0) {
+        resultElement.textContent = '--';
+        statusElement.textContent = 'Por favor, completa todos los campos.';
+        recommendationsElement.textContent = '--';
+        averageIMCElement.textContent = 'Selecciona tu género para ver el promedio.';
+        return;
+      }
+
+      const imc = (weight / (height * height)).toFixed(1);
+
+      resultElement.textContent = imc;
+
+      let status = '';
+      let recommendations = '';
+      let averageIMC = '';
+
+      if (imc < 16) {
+        status = 'Desnutrición';
+        recommendations = 'Aumenta tu ingesta calórica con alimentos ricos en nutrientes. Consulta a un nutricionista.';
+        statusElement.style.color = '#9900cc';
+      } else if (imc >= 16 && imc < 18.5) {
+        status = 'Bajo peso';
+        recommendations = 'Consume alimentos con alto contenido calórico y realiza ejercicios de fuerza.';
+        statusElement.style.color = '#ffcc00';
+      } else if (imc >= 18.5 && imc < 25) {
+        status = 'Peso normal';
+        recommendations = 'Mantén una dieta balanceada y realiza ejercicio regular para conservar tu estado.';
+        statusElement.style.color = '#00ff00';
+      } else if (imc >= 25 && imc < 30) {
+        status = 'Sobrepeso';
+        recommendations = 'Reduce el consumo de grasas saturadas y azúcares. Realiza ejercicio aeróbico.';
+        statusElement.style.color = '#ff9900';
+      } else if (imc >= 30 && imc < 40) {
+        status = 'Obesidad';
+        recommendations = 'Consulta con un médico para un plan de pérdida de peso seguro y efectivo.';
+        statusElement.style.color = '#ff0000';
+      } else {
+        status = 'Obesidad extrema';
+        recommendations = 'Es fundamental buscar orientación médica para prevenir complicaciones graves.';
+        statusElement.style.color = '#000000';
+      }
+
+      // Añadir recomendaciones basadas en condiciones
+      if (conditions.includes('hipertension')) {
+        recommendations += ' Controla tu ingesta de sal y realiza ejercicio moderado.';
+      }
+      if (conditions.includes('problemas_cervicales')) {
+        recommendations += ' Evita ejercicios de impacto y consulta a un fisioterapeuta.';
+      }
+      if (conditions.includes('problemas_corazon')) {
+        recommendations += ' Evita ejercicios intensos y consulta a un cardiólogo.';
+      }
+      if (conditions.includes('diabetes')) {
+        recommendations += ' Mantén un control estricto de tus niveles de glucosa. Opta por carbohidratos complejos, evita azúcares añadidos y consulta a un endocrinólogo.';
+      }
+
+      // Mostrar promedio de IMC normal según género
+      if (gender === 'Masculino') {
+        averageIMC = 'El promedio de IMC normal en hombres es de 20 a 25.';
+      } else if (gender === 'Femenino') {
+        averageIMC = 'El promedio de IMC normal en mujeres es de 18.5 a 24.';
+      }
+
+      statusElement.textContent = `(${gender}, ${age} años): ${status}`;
+      recommendationsElement.textContent = recommendations;
+      averageIMCElement.textContent = averageIMC;
+    });
+  </script>
+</body>
+</html>

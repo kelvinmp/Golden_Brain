@@ -1,0 +1,264 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Parkinsans";
+  background-color: #182ca4;
+  height: 100%;
+  text-align: center;
+}
+
+header {
+  border-top: 5px solid #182ca4;
+  background-image: url(/Images/sfondo2.png);
+  background-size: 100% 100%; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  text-align: center;
+  font-weight: lighter;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 10px;
+}
+
+header p {
+  font-weight: bold;
+  margin: 5px 0 20px;
+  font-size: 1.3rem; 
+}
+
+.letras{
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.letrass{
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 30px;
+}
+
+nav a {
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(70, 70, 70);
+}
+
+.barra {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: transparent;
+}
+
+.barra::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 40px;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.barra-azul {
+  color: #182ca4;
+  font-weight: bold;
+}
+
+.barra-azul::before {
+  background-color: #182ca4;
+}
+
+.negro {
+  color: black;
+}
+
+.centro {
+  align-items: center;
+}
+
+/* Sección Home */
+
+#home {
+  background-color: #ffffff;
+}
+
+.contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.imagen img {
+  flex: 1;
+  max-width: 500px;
+  height: auto;
+  border: 2px solid #ccc;
+}
+
+.containerh {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  width: 60%;
+}
+
+.h {
+margin-left: 120px;
+}
+.h2{
+margin-right: 30px;
+}
+.h3{
+margin-left: 70px;
+}
+
+
+.hero {
+  background-image: url('tu-imagen-de-fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.hero h2 {
+  font-size: 3rem;
+}
+
+.btn {
+  font-weight: bold;
+  background: #fff;
+  color: #182ca4;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.iemeg {
+  margin: 1px;
+  max-width: 400px;
+  max-height: 400px;
+  border: solid 5px #182ca4;
+}
+
+#aron {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 20px;
+  background-image: url(/Images/fondosamsun.png);
+  background-size: auto 100%;
+  background-repeat: no repeat;
+}
+
+#aron2{
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  background-image: url(/Images/fondosamsun2.png);
+  background-size: 100% 100%; 
+  background-position: center; 
+}
+
+#aron2 div:first-child {
+  justify-self: start; /* Alinea el contenedor de las imágenes a la izquierda */
+}
+
+#aron3{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  background-image: url(/Images/fondosamsun.png);
+  background-size: auto 100%;
+  background-repeat: no repeat;
+}
+
+.EMP {
+  margin-left: 50px;
+  padding: 10px;
+  flex: 1;
+  max-width: 700px;
+  height: auto;
+}
+.EMP2{
+  flex: 1;
+  max-width: 850px;
+  height: auto;
+  margin-left: 50px;
+}
+
+#about {
+  padding: 50px;
+  text-align: center;
+}
+
+/* Estilos adicionales que puedes personalizar */
+
+/* Secciones */
+section {
+  padding: 50px;
+}
+
+/* Contenedores */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Títulos */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Párrafos */
+p {
+  line-height: 1.6;
+}
+
+#goblu {
+  background-image: url(/Images/goblue.png);
+}
+
+/* Botones */
+.btn:hover {
+  background: #c1c5d7;
+}

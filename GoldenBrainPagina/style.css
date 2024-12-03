@@ -1,0 +1,185 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Parkinsans";
+  background-color: #182ca4;
+  color: #ffffff;
+  text-align: center;
+}
+
+header {
+  border-top: 5px solid #182ca4;
+  background-image: url(/Images/sfondo2.png);
+  background-size: 100% 100%; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  text-align: center;
+  font-weight: lighter;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 10px;
+}
+
+header p {
+  font-weight: bold;
+  margin: 5px 0 20px;
+  font-size: 1.3rem; 
+}
+.header-subtitle {
+  margin: 5px 0 0;
+  font-size: 1.2rem;
+  color: #182ca4;
+}
+
+.barra {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: transparent;
+}
+
+.barra::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 40px;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.barra-azul {
+  color: #182ca4;
+  font-weight: bold;
+}
+
+.barra-azul::before {
+  background-color: #182ca4;
+}
+
+.negro {
+  color: black;
+}
+
+
+
+/* Formulario */
+.calculator {
+  background: #ffffff;
+  color: #182ca4;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.input-group {
+  margin-bottom: 15px;
+}
+input[type="number"] {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #12206e;
+  border-radius: 5px;
+  margin-right: 8px;
+}
+
+
+.gender-group {
+  margin: 15px 0;
+}
+.gender-label {
+  cursor: pointer;
+}
+.gender-button {
+  display: inline-block;
+  padding: 5px 15px;
+  background: #e6f2ff;
+  border-radius: 5px;
+  color: #12206e;
+  font-weight: bold;
+  border: 1px solid #12206e;
+  transition: all 0.3s ease;
+}
+.gender-label input[type="radio"]:checked + .gender-button {
+  background: #12206e;
+  color: #ffffff;
+}
+
+
+.calculate-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background: #182ca4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.calculate-btn:hover {
+  background: #12206e;
+  transform: scale(1.05);
+}
+
+
+.home-btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  text-align: center;
+  background: #182ca4;
+  color: #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  max-width: 150px;
+}
+.home-btn:hover {
+  background: #12206e;
+  transform: scale(1.05);
+}
+
+
+.imc-bar {
+  display: flex;
+  height: 20px;
+  border: 1px solid #12206e;
+  margin-top: 20px;
+}
+.bar {
+  flex: 1;
+}
+.bar.desnutricion {
+  background: #9900cc;
+}
+.bar.bajo {
+  background: #ffcc00;
+}
+.bar.normal {
+  background: #00ff00;
+}
+.bar.sobrepeso {
+  background: #ff9900;
+}
+.bar.obesidad {
+  background: #ff0000;
+}
+.bar.obesidad-extrema {
+  background: #000000;
+}
