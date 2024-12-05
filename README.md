@@ -4,6 +4,7 @@ Título: “Test de Salud: Índice de Masa Corporal para el análisis de la nutr
 
 •	Descripción
 Este proyecto es una web interactiva que permite a los usuarios acceder a un foro de salud donde se comparte información, consejos, experiencias y dudas relacionadas con el bienestar físico y permite calcular el Índice de Masa Corporal (IMC) de todo usuario que rellena los apartados correspondientes.
+
 ![imagen](https://github.com/user-attachments/assets/64e7352f-5212-49f9-ae84-89c7c07363b8)
 
 
@@ -13,6 +14,7 @@ Arquitectura:
 Dataframe: [Pandas, matplotlib.pyplot y calculadora propia IMC]
 
 •	Limpieza de datos:
+
  ![imagen](https://github.com/user-attachments/assets/de12f39c-dbeb-4af4-a3c3-ee3f294d6b1d)
 
 
@@ -33,6 +35,7 @@ https://es.wikipedia.org/wiki/Ecuación_de_Harris-Benedict
 https://www.nutricionistasydietistas.com
 
 •	Estadísticos (Valores, gráficos, …)
+
  ![imagen](https://github.com/user-attachments/assets/c2ad405a-d938-454c-a36b-39e762d7f55f)
  
  ![imagen](https://github.com/user-attachments/assets/3274bc20-e616-4eb8-bf76-fe8db9a68847)
@@ -48,15 +51,18 @@ Integración de proyecto en dos páginas web
 1.	Primera página web:
 Tecnologías implicadas: HTML, CSS, JavaScript.
 Arquitectura:
+
 ![imagen](https://github.com/user-attachments/assets/4c1d4895-5d6e-4346-b8c2-066e6ac06d79)
 
-2.	Página web:
+3.	Página web:
 Arquitectura: google sites.
+
 ![imagen](https://github.com/user-attachments/assets/66ccb407-dd4a-4796-82b3-c7eed564e009)
  
 •	Funcionalidades extras:
 Se desarrolló un bot.
 Tecnologías implicadas: Discord
+
  ![imagen](https://github.com/user-attachments/assets/f026f915-3b12-4357-abb6-838e3665269d)
 
 ![imagen](https://github.com/user-attachments/assets/361689f0-21d9-4290-8ab5-ec5db3481283)
